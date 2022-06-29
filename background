@@ -1,0 +1,44 @@
+
+## line protocol
+
+ref: https://docs.influxdata.com/influxdb/cloud/reference/syntax/line-protocol/
+
+syntax:
+```
+<measurement>[,<tag_key>=<tag_value>[,<tag_key>=<tag_value>]] <field_key>=<field_value>[,<field_key>=<field_value>] [<timestamp>]\n
+```
+
+measurement:
+* required
+* naming restrictions.
+* InfluxDB accepts one measurement per point.
+* string
+
+tags:
+* optional
+* naming restrictions.
+* string: string
+* Tag keys and tag values are case-sensitive
+
+fields:
+* required
+* naming restrictions.
+* string: string|bool|f64|i64|u64
+* Field keys and string values are case-sensitive
+
+timestamp:
+* InfluxDB accepts one timestamp per point
+* If no timestamp is provided, InfluxDB uses the system time (UTC) of its host machine.
+* default nanosecond unit or specified others
+
+naming restrictions: cannot begin with an underscore `_`
+
+timestamp precision: n, u, ms, s, m, h
+
+types:
+* float:     123, 123.4
+* i64:       123i
+* u64:       123u
+* str:       "abc" # max to 64<<10
+* bool:      t, true, f, false
+* timestamp: 9223372036854775806

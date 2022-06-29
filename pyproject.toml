@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "influxlib"
+version = "0.1.0"
+description = ""
+authors = ["haoliang <haoliang0.1.2@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+attrs = "*"
+trio = "*"
+httpcore = "^0"
+
+[tool.poetry.dev-dependencies]
+
+pytest = "^6.2.5"
+pytest-trio = "^0"
+trio-typing = "^0"
+
+# used by nvim
+pynvim = "*"
+## linters
+pylint = "*"
+mypy = "*"
+flake8 = "*"
+## formatter
+isort = "*"
+black = "*"
+
+[[tool.poetry.source]]
+name = 'tencent_mirror'
+url = 'http://mirrors.cloud.tencent.com/pypi/simple'
+default = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

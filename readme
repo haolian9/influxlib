@@ -1,0 +1,24 @@
+a trio based async client of influxdb
+
+influxdb api: https://docs.influxdata.com/influxdb/v2.2/api
+target influxdb versions: 2.2
+
+deps:
+* trio
+* attrs
+* httpcore
+
+repo addr:
+* gitlab: ?
+* github: git@github.com:haolian9/influxlib.git
+
+todo:
+* [ ] maybe messages can be sent to telegraf
+* [ ] connect to influxdb through sock, tcp, udp
+* [x] token auth
+* ~~[] basic auth~~
+
+todo - apis: (comes from https://github.com/influxdata/influxdb-python)
+* [x] ping
+* [x] write
+* [x] write_many
